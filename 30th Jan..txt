@@ -1,0 +1,111 @@
+1.marks = int(input("Enter your marks:"))
+
+if marks > 90 :
+    print("A")
+elif marks > 80 :
+    print("B")
+elif marks >+ 60 :
+    print("C")
+else :
+    print("D")
+
+2.cost = int(input("Enter your cost of the Bike:"))
+
+if cost > 100000 :
+    print("Road tax of the bike is:",cost*(15/100))
+elif cost > 50000 :
+    print("Road tax of the bike is:",cost*(10/100))
+else :
+    print("Road tax of the bike is:",cost*(5/100))
+
+
+3.city = input("Enter your city: ")
+
+if city == "Delhi" :
+    print("Red Fort")
+elif city == "Agra" :
+    print("Taj Mahal")
+elif city == "Jaipur" :
+    print("Jal Mahal")
+
+
+4.number = int(input("Enter Your Number: "))
+count=0
+while number >= 3 :
+    number = number/3
+    if number < 10 :
+     break
+    count=count+1
+print("The number is ",count)
+
+5.while loop is an indefinite itteration that is used when a loop repeats unkown number of times and end when some condition is met.
+
+A "While" Loop is used to repeat a specific block of code an unknown number of times, until a condition is met. For example, if we want to ask a user for a number between 1 and 10, we don't know how many times the user may enter a larger number, so we keep asking "while the number is not between 1 and 10".
+
+
+6.number = int(input("Enter your number :"))
+i =1
+while i <= number :
+    j=1
+    while j <= i :     
+        print("*", end = " ")
+        j+=1
+    print()
+    i+=1
+O/P-
+Enter your number : 5
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+number = int(input("Enter your number :"))
+i =1
+while i <= number :
+    j=number
+    while j >= 1 :     
+        print("*", end = " ")
+        j-=1
+    print()
+    i+=1
+O/P-
+Enter your number : 5
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+number = int(input("Enter your number :"))
+i =1
+while number >= i :
+    j=1
+    while j <= number :     
+        print("*", end = " ")
+        j+=1
+    print()
+    number-=1
+O/P-
+Enter your number : 5
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+
+
+7.number = int(input("Enter your number :"))
+while number >=1 :
+    print(number)
+    number-=1
+O/P-
+Enter your number : 10
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
