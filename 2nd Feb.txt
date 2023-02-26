@@ -1,0 +1,48 @@
+1.Explain with an example each when to use a for loop and a while loop.
+Use a for loop when you know the loop should execute n times. Use a while loop for reading a file into a variable. Use a while loop when asking for user input. Use a while loop when the increment value is nonstandard.
+
+2.
+num = int(input("Enter the number: "))
+sum=0
+product=1
+i=1
+while i<=num :
+    sum=sum+i
+    product=product*i
+    i+=1
+print("The sum of natural numbers",sum)
+print("The product of natural numbers",product)
+
+
+3.
+bill = int(input("Enter Your Bill: "))
+total=0
+if bill <= 100 :
+        total = i*4.5
+elif bill <= 200 :
+        total=100*4.5+(bill-100)*6
+elif  bill <= 300 :
+        total=100*4.5+100*6+(bill-200)*10
+else :
+        total=100*4.5+100*6+100*10+(bill-300)*20
+print("The Total Bill is: ",total)
+
+4.
+num = int(input("Enter the number: "))
+l=list(range(1,num+1))
+l1=[]
+for i in l :
+    i=i**3
+    if i%4==0 or i%5==0 :
+        l1.append(i)
+l1
+
+5.
+str=input("Enter the string:")
+count=0
+for i in str :
+    if i == 'a' or i == 'e' or i == 'i' or i == 'o' or i == 'u' :
+        count+=1
+    elif i == 'A' or i == 'E' or i == 'I' or i == 'O' or i == 'U' :
+        count+=1
+print("There are",count,"Vowels")
