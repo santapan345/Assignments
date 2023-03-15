@@ -1,0 +1,17 @@
+1.Object − Objects have states and behaviors. Example: A dog has states - color, name, breed as well as behaviors – wagging the tail, barking, eating. An object is an instance of a class. Class − A class can be defined as a template/blueprint that describes the behavior/state that the object of its type support.
+
+2.Inheritance, Polymorphism, Encapsulation and Abstraction
+
+3.__init__ is a special python method that runs whenever a new object is created. These types of functions are used to initialize the attributes of that class, E.g., if the class is Person, then the attributes will be name, age, etc.
+
+4.The self variable is used to represent the instance of the class which is often used in object-oriented programming. It works as a reference to the object. Python uses the self parameter to refer to instance attributes and methods of the class
+
+5.
+Inheritance is a fundamental object-oriented programming concept where a new class is created by inheriting the properties and methods of an existing class, known as the base or parent class. The new class is called the derived or child class.
+
+There are four types of inheritance in object-oriented programming:
+
+i)Single Inheritance: When a derived class inherits from a single base class, it is known as single inheritance.
+ii)Multiple Inheritance: When a derived class inherits from multiple base classes, it is known as multiple inheritance.
+iii)Multilevel Inheritance: When a derived class is created from another derived class, it is known as multilevel inheritance.
+iv)Hierarchical Inheritance: When multiple derived classes inherit from a single base class, it is known as hierarchical inheritance.
