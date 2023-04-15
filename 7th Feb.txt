@@ -1,0 +1,76 @@
+Q1. You are writing code for a company. The requirement of the company is that you create a python
+function that will check whether the password entered by the user is correct or not. The function should
+take the password as input and return the string “Valid Password” if the entered password follows the
+below-given password guidelines else it should return “Invalid Password”.
+
+Ans:
+def check_pass(pass1):
+    upper=0
+    lower=0
+    ss=0
+    dig=0
+    SpecialSym = ['!', '@', '#', '$', '%', '&',
+                  '(', ')', '-', '_', '[', ']', '{', '}', ';', ':', '"', '.', '/', '<', '>', '?','^']
+    if len(pass1)>9:
+        for i in pass1:
+            if i.isdigit():
+                dig+=1
+            if i.isupper():
+                upper+=1
+            if i.islower():
+                lower+=1
+            if i in SpecialSym:
+                ss+=1
+    if upper >=2 and lower >=2 and ss>=3 and dig>=1:
+          print("Valid Password")
+    else :
+          print("Invalid Password")
+    
+check_pass(input("Enter Your Password:"))
+
+O/P:
+Enter Your Password: Santapan@#$21W
+Valid Password
+
+Q2. Solve the below-given questions using at least one of the following:
+1. Lambda function
+Ans:
+# num = lambda s : s.isnumeric()
+  num("23451")
+  O/P:
+  True
+# num1 = lambda n:n%2==0
+  num1(1234)
+  O/P:
+  True
+  
+2. Filter function
+Ans:
+l=[1,2,3,4,5,6,7,8,9,10]
+list(filter(lambda x:x%2!=0,l))
+O/P:[1, 3, 5, 7, 9]
+
+3. Map function
+Ans:
+# l=[1,2,3,4,5,6,7,8,9,10]
+  list(map(lambda x:x**2,l))
+  O/P:[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+# l=[1,2,3,4,5,6,7,8,9,10]
+  list(map(lambda x:x**(1/3),l))
+  O/P:[1.0,
+ 1.2599210498948732,
+ 1.4422495703074083,
+ 1.5874010519681994,
+ 1.7099759466766968,
+ 1.8171205928321397,
+ 1.912931182772389,
+ 2.0,
+ 2.080083823051904,
+ 2.154434690031884]
+ 
+4. List Comprehension
+l=[1,2,3,4,5,6,-1,-2,-3,-4,-5,0]
+even = [x for x in l if x%2==0 in l]
+print(even)
+O/P:
+[2, 4, 6, -2, -4, 0]
