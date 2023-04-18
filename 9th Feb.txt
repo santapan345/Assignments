@@ -1,0 +1,96 @@
+Q1. Create a vehicle class with an init method having instance variables as name_of_vehicle, max_speed
+and average_of_vehicle.
+Q2. Create a child class car from the vehicle class created in Que 1, which will inherit the vehicle class.
+Create a method named seating_capacity which takes capacity as an argument and returns the name of
+the vehicle and its seating capacity.
+
+Ans:
+class Vehicle():
+    def __init__(self,name,max_speed,average):
+        self.name = name
+        self.max_speed = max_speed
+        self.average_of_vehicle = average
+        
+class car(Vehicle):
+    def seating_capacity(self,name,capacity):
+        self.name=name
+        self.capacity=capacity
+        
+        return name,capacity
+v = car("Hyundai","200KM","20KM/L")
+v.seating_capacity("Hyundai","1200kg")
+
+O/P:
+('Hyundai', '1200kg')
+
+Q3. What is multiple inheritance? Write a python code to demonstrate multiple inheritance.
+Ans:
+If a child class is inheriting the properties of a single other class, we call it single inheritance. However, if a child class inherits from more than one class, i.e. this child class is derived from multiple classes, we call it multiple inheritance in Python.
+
+
+# creating class for father
+class Dad():
+	# writing a method for parent class 1
+	def singing(self):
+		print("Dad sings well")
+		
+# creating a class for mother
+class Mom():
+	# method for parent class 2
+	def coding(self):
+		print("Mom codes well")
+
+# creating derived class
+class Child(Dad, Mom):
+	def play(self):
+		print("Kid loves to play")
+
+# creating object of the new derived class
+child = Child()
+# calling methods of parent classes and derived class
+child.singing()
+child.coding()
+child.playing()	
+
+O/P:
+Dad sings well
+Mom codes well
+Kid loves to play
+
+Q4. What are getter and setter in python? Create a class and create a getter and a setter method in this
+class.
+Ans:
+Getter and setter methods are quite popular in many object-oriented programming languages. So, it’s pretty likely that you’ve heard about them already. As a rough definition, you can say that getters and setters are:
+
+Getter: A method that allows you to access an attribute in a given class
+Setter: A method that allows you to set or mutate the value of an attribute in a class
+In OOP, the getter and setter pattern suggests that public attributes should be used only when you’re sure that no one will ever need to attach behavior to them. If an attribute is likely to change its internal implementation, then you should use getter and setter methods.
+
+Implementing the getter and setter pattern requires:
+
+Making your attributes non-public
+Writing getter and setter methods for each attribute
+For example, say that you need to write a Label class with text and font attributes. If you were to use getter and setter methods to manage these attributes, then you’d write the class like in the following code:
+class Label:
+    def __init__(self, text, font):
+        self._text = text
+        self._font = font
+
+    def get_text(self):
+        return self._text
+
+    def set_text(self, value):
+        self._text = value
+
+    def get_font(self):
+        return self._font
+
+    def set_font(self, value):
+        self._font = value
+        
+        
+Q5.What is method overriding in python? Write a python code to demonstrate method overriding.
+Ans:
+Method overriding is a feature of object-oriented programming languages where the subclass or child class can provide the program with specific characteristics or a specific implementation process of data provided that are already defined in the parent class or superclass.
+
+
