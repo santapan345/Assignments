@@ -1,0 +1,17 @@
+Q1. What is Abstraction in Oops? Explain with an example.
+Ans: Abstraction is the process of hiding the internal details of an application from the outer world. Abstraction is used to describe things in simple terms. It’s used to create a boundary between the application and the client programs.
+
+Abstraction is present in almost all the real life machines.
+Your car is a great example of abstraction. You can start a car by turning the key or pressing the start button. You don’t need to know how the engine is getting started, what all components your car has. The car internal implementation and complex logic is completely hidden from the user.
+
+Q2. Differentiate between Abstraction and Encapsulation. Explain with an example.
+Ans: Abstraction is a way of representing some specific data. Encapsulation is a way of hiding the complexity of something and exposing only the parts you wish to expose. For example, if you have a class that has one or more private fields that you use to store the data, then you are in encapsulation.
+
+Q3. What is abc module in python? Why is it used?
+Ans: The 'abc' module in Python library provides the infrastructure for defining custom abstract base classes. 'abc' works by marking methods of the base class as abstract. This is done by @absttractmethod decorator.
+
+Q4. How can we achieve data abstraction?
+Ans: Data abstraction is a method where essential elements are displayed to the user and trivial elements are kept hidden. In Python, abstraction can be achieved by having/using abstract classes and methods in our programs. Understanding Abstract Methods and Classes: An abstract method is a method that is declared, but does not contain implementation.
+
+Q5. Can we create an instance of an abstract class? Explain your answer.
+Ans: 
