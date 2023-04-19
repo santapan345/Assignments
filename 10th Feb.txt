@@ -1,0 +1,107 @@
+Q1. Which function is used to open a file? What are the different modes of opening a file? Explain each mode
+of file opening.
+Ans:
+r - Open a file for reading. (default)
+w - Open a file for writing. Creates a new file if it does not exist or truncates the file if it exists.
+x - Open a file for exclusive creation. If the file already exists, the operation fails.
+a - Open a file for appending at the end of the file without truncating it. Creates a new file if it does not exist.
+t - Open in text mode. (default)
+b - Open in binary mode.
++ - Open a file for updating (reading and writing)
+
+Q2. Why close() function is used? Why is it important to close a file?
+Ans:The close() method closes an open file. You should always close your files, in some cases, due to buffering, changes made to a file may not show until you close the file.
+
+Q3. Write a python program to create a text file. Write ‘I want to become a Data Scientist’ in that file. Then
+close the file. Open this file and read the content of the file.
+Ans:
+f = open("santa.txt",'w')
+f.write("I want to become a Data Scientist")
+f.close()
+f=open("santa.txt",'r')
+f.read()
+
+Q4. Explain the following with python code: read(), readline() and readlines().
+Ans:
+* read()
+The read method reads the entire contents of a file and returns it as a string.
+with open("file.txt", "r") as file:
+    content = file.read()
+    print(content)
+    
+*readline()
+The readline method reads a single line from a file and returns it as a string. This means that if you use readline, you can read the contents of a file line by line, which can be useful for processing large files that do not fit in memory.
+with open("file.txt", "r") as file:
+    line = file.readline()
+    while line:
+        print(line.strip())
+        line = file.readline()
+        
+*readlines()
+The readline method reads a single line from a file and returns it as a string, while the readlines method reads the entire contents of a file and returns it as a list of strings, where each element of the list is a single line of the file.
+with open("file.txt", "r") as file:
+    lines = file.readlines()
+    for line in lines:
+        print(line.strip())
+        
+Q5. Explain why with statement is used with open(). What is the advantage of using with statement and
+open() together?
+Ans:The with statement simplifies exception handling by encapsulating common preparation and cleanup tasks.
+
+The with statement works with the open() function to open a file. Unlike open() where you have to close the file with the close() method, the with statement closes the file for you without you telling it to. This is because the with statement calls 2 built-in methods behind the scene – __enter()__ and __exit()__ .
+
+Q6. Explain the write() and writelines() functions. Give a suitable example.
+Ans:
+write() function
+The write() function will write the content in the file without adding any extra characters.
+Syntax: 
+# Writes string content referenced by file object.
+file_name.write(content) 
+As per the syntax, the string that is passed to the write() function is written into the opened file. The string may include numbers, special characters, or symbols. While writing data to a file, we must know that the write function does not add a newline character(\n) to the end of the string. The write() function returns None.
+
+Example: 
+file = open("Employees.txt", "w")
+  
+for i in range(3):
+   name = input("Enter the name of the employee: ")
+   file.write(name)
+   file.write("\n")
+     
+file.close()
+print("Data is written into the file.")
+
+Output:
+Data is written into the file.
+
+Sample Run:
+Enter the name of the employee: Aditya
+Enter the name of the employee: Aditi
+Enter the name of the employee: Anil
+
+writelines() function
+This function writes the content of a list to a file.
+
+Syntax:   
+# write all the strings present in the list "list_of_lines" 
+# referenced by file object.
+file_name.writelines(list_of_lines)
+As per the syntax, the list of strings that is passed to the writelines() function is written into the opened file. Similar to the write() function, the writelines() function does not add a newline character(\n) to the end of the string.
+
+Example:
+file1 = open("Employees.txt", "w")
+lst = []
+for i in range(3):
+    name = input("Enter the name of the employee: ")
+    lst.append(name + '\n')
+      
+file1.writelines(lst)
+file1.close()
+print("Data is written into the file.")
+
+Output:
+Data is written into the file.
+
+Sample Run:
+Enter the name of the employee: Rhea
+Enter the name of the employee: Rohan
+Enter the name of the employee: Rahul
