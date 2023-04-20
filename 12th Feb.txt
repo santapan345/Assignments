@@ -1,0 +1,105 @@
+Q1. What is an Exception in pthon? Write the difference etween Exceptions and syntax errors.
+Ans: An exception is an event, which occurs during the execution of a program that disrupts the normal flow of the program's instructions. In general, when a Python script encounters a situation that it cannot cope with, it raises an exception. An exception is a Python object that represents an error.
+
+Errors mostly happen at compile-time like syntax error; however it can happen at runtime as well. Whereas an Exception occurs at runtime (checked exceptions can be detected at compile time). Both Error and Exception have the same parent class as Throwable.
+
+Q2. What happens when an exception is not handled? Explain with an example.
+Ans: If an exception is not caught (with a catch block), the runtime system will abort the program (i.e. crash) and an exception message will print to the console.
+
+Examples include a user providing abnormal input, a file system error being encountered when trying to read or write a file, or a program attempting to divide by zero. Exception handling attempts to gracefully handle these situations so that a program (or worse, an entire system) does not crash.
+
+Q3. Which Python statements are used to catch and handle exceptions? Explain with an example.
+Ans:
+The try and except block in Python is used to catch and handle exceptions. Python executes code following the try statement as a “normal” part of the program.
+
+To handle the exception, we have put the code, result = numerator/denominator inside the try block. Now when an exception occurs, the rest of the code inside the try block is skipped. The except block catches the exception and statements inside the except block are executed.
+
+Q4. Explain with an example:
+
+ a.try and else
+ b.finally
+ c.raise
+ 
+Ans:
+Try: This block will test the excepted error to occur
+Else: If there is no exception then this block will be executed
+Finally: Finally block always gets executed either exception is generated or not
+
+Syntax:
+
+try:
+       # Some Code.... 
+
+else:
+       # execute if no exception
+
+finally:
+      # Some code .....(always executed)
+
+# Python code to illustrate
+# working of try() 
+def divide(x, y):
+    try:
+        # Floor Division : Gives only Fractional
+        # Part as Answer
+        result = x // y
+    else:
+        print("Yeah ! Your answer is :", result)
+    finally: 
+        # this block is always executed  
+        # regardless of exception generation. 
+        print('This is always executed')  
+ 
+# Look at parameters and note the working of Program
+divide(3, 2)
+divide(3, 0)
+
+O/P:
+Yeah ! Your answer is : 1
+This is always executed 
+
+Python raise Keyword is used to raise exceptions or errors. The raise keyword raises an error and stops the control flow of the program. It is used to bring up the current exception in an exception handler so that it can be handled further up the call stack.
+
+a = 5
+  
+if a % 2 != 0:
+    raise Exception("The number shouldn't be an odd integer")
+    
+O/P:
+---------------------------------------------------------------------------
+Exception                                 Traceback (most recent call last)
+Cell In[1], line 4
+      1 a = 5
+      3 if a % 2 != 0:
+----> 4     raise Exception("The number shouldn't be an odd integer")
+
+Exception: The number shouldn't be an odd integer
+
+Q5. What are Custom Exceptions in python? Why do we need Custom Exceptions? Explain with an example.
+Ans:
+Custom exceptions provide you the flexibility to add attributes and methods that are not part of a standard Java exception. These can store additional information, like an application-specific error code, or provide utility methods that can be used to handle or present the exception to a user.
+
+
+# A python program to create user-defined exception
+# class MyError is derived from super class Exception
+class MyError(Exception):
+ 
+    # Constructor or Initializer
+    def __init__(self, value):
+        self.value = value
+ 
+    # __str__ is to print() the value
+    def __str__(self):
+        return(repr(self.value))
+ 
+ 
+try:
+    raise(MyError(3*2))
+ 
+# Value of Exception is stored in error
+except MyError as error:
+    print('A New Exception occurred: ', error.value)
+    
+O/P: A New Exception occurred:  6
+
+Q6. Create a custom exception class. Use this class to handle an exception.
