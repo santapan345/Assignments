@@ -1,0 +1,108 @@
+Q1. Explain why we have to use the Exception class while creating a Custom Exception.
+Ans:In Python, exceptions are used to handle errors or exceptional conditions that may arise during the execution of a program. Python provides a built-in Exception class as the base class for all exceptions, and it is recommended to inherit from this base class when creating custom exceptions. Here are a few reasons why it is common practice to use the Exception class as the base class for custom exceptions:
+
+Inheritance: By inheriting from the Exception class, a custom exception can inherit all the properties and behaviors of the base Exception class. This includes common methods such as __init__, __str__, and __repr__, which can be overridden or extended in the custom exception as needed. Inheriting from the Exception class also allows the custom exception to be caught by a generic except block that catches exceptions of the base Exception class or its subclasses, providing a unified approach for error handling.
+
+Consistency: Using the Exception class as the base class for custom exceptions promotes consistency in exception handling across different parts of a program or across different programs. Since all exceptions are derived from the Exception class, it makes it easier to understand and manage exceptions in a uniform way, regardless of where they are raised or caught in the code.
+
+Best Practices: Following established coding conventions and best practices is important in software development. In Python, it is considered a best practice to use the Exception class as the base class for custom exceptions, as recommended by the Python's official style guide (PEP 8) and Python's documentation. This promotes code readability, maintainability, and reduces the risk of errors in exception handling.
+
+Compatibility: Using the Exception class as the base class for custom exceptions ensures compatibility with other Python libraries, frameworks, and tools that expect exceptions to be derived from the Exception class. It also makes it easier for other developers to understand and work with custom exceptions in a Pythonic way.
+
+Q2. Write a python program to print Python Exception Hierarchy.
+Ans:
+def print_exception_hierarchy(exception_class, indent=0):
+    print(" " * indent + f"{exception_class.__name__}")
+    if issubclass(exception_class, BaseException):
+        for subclass in exception_class.__subclasses__():
+            print_exception_hierarchy(subclass, indent + 4)
+
+
+print_exception_hierarchy(BaseException)
+
+This program defines a recursive function print_exception_hierarchy that takes an exception class as an argument and prints its name along with its subclasses in a hierarchical format. It starts with the BaseException class, which is the base class for all exceptions in Python, and recursively prints the names of its subclasses. The indent parameter is used to keep track of the indentation level for formatting the output.
+
+When you run this program, it will print the Python Exception Hierarchy, which includes all the built-in exception classes in Python, in a nested format. Note that the hierarchy may vary slightly depending on the Python version and implementation you are using.
+
+Q3. What errors are defined in the ArithmeticError class? Explain any two with an example.
+Ans:
+The ArithmeticError class is a base class for exceptions that are related to arithmetic operations in Python. It is a subclass of the Exception class and is further subclassed by more specific exception classes that represent different types of arithmetic errors. Here are two examples of specific exceptions that are derived from the ArithmeticError class:
+
+ZeroDivisionError: This exception is raised when attempting to divide by zero, which is an undefined operation in mathematics. For example:
+
+try:
+    result = 10 / 0  # Division by zero
+except ZeroDivisionError as e:
+    print(f"ZeroDivisionError: {e}")
+O/P:
+ZeroDivisionError: division by zero
+
+OverflowError: This exception is raised when the result of an arithmetic operation exceeds the maximum representable value for a numeric type in Python. For example:
+import sys
+
+try:
+    result = sys.maxsize + 1  # Integer overflow
+except OverflowError as e:
+    print(f"OverflowError: {e}")
+O/P:
+OverflowError: integer addition result too large for a float
+
+Note that the specific error messages and behaviors of these exceptions may vary depending on the Python version and implementation you are using. It is important to handle these exceptions appropriately in your code to avoid unexpected crashes or incorrect results due to arithmetic errors.
+
+Q4. Why LookupError class is used? Explain with an example KeyError and IndexError.
+Ans:LookupError is a base class for exceptions that occur when a lookup or index operation fails in Python. It is used to handle errors related to accessing elements or values in a collection such as lists, tuples, or dictionaries. Here are some examples of specific exceptions that are derived from the LookupError class:
+
+KeyError: This exception is raised when a dictionary is accessed with a key that does not exist in the dictionary. For example:
+my_dict = {'key1': 'value1', 'key2': 'value2'}
+try:
+    print(my_dict['key3'])  # Accessing a non-existent key
+except KeyError as e:
+    print(f"KeyError: {e}")
+O/P:
+KeyError: 'key3'
+
+IndexError: This exception is raised when a list or tuple is accessed with an index that is out of range. For example:
+my_list = [1, 2, 3]
+try:
+    print(my_list[3])  # Accessing an index that is out of range
+except IndexError as e:
+    print(f"IndexError: {e}")
+O/P:
+IndexError: list index out of range
+
+Q5. Explain ImportError. What is ModuleNotFoundError?
+Ans:ImportError is an exception that is raised when an import statement fails to import a module or when a module cannot be found. It is commonly used when importing Python modules from external sources or libraries.
+
+ModuleNotFoundError: This is a subclass of ImportError that is raised when a module cannot be found or imported. It was introduced in Python 3.6 as a more specific exception for handling module import failures. For example:
+
+try:
+    import non_existent_module
+except ModuleNotFoundError as e:
+    print(f"ModuleNotFoundError: {e}")
+O/P:
+ModuleNotFoundError: No module named 'non_existent_module'
+
+Q6. List down some best practices for exception handling in python.
+Ans:Here are some best practices for exception handling in Python:
+
+Use specific exception types: Catch only the exceptions that you expect and handle them accordingly. Avoid using generic except blocks that catch all exceptions, as it can make it difficult to diagnose and fix errors.
+
+Handle exceptions gracefully: Provide informative error messages and take appropriate actions to handle exceptions in a graceful manner. This may involve logging the error, displaying user-friendly messages, or taking alternative paths in the code to recover from the error.
+
+Keep exception handling minimal: Do not use exception handling as the primary flow control mechanism in your code. It can make the code harder to read, maintain, and debug. Use exception handling only for exceptional situations that are beyond your control.
+
+Be mindful of exception chaining: When catching exceptions, be mindful of preserving the original exception information by using the as keyword to capture the exception and raise it again, or by using the raise statement without any arguments to re-raise the caught exception. This helps in understanding the root cause of the exception.
+
+Follow coding conventions: Adhere to established coding conventions and best practices, such as using meaningful exception names, providing docstrings, and organizing exception handling code in a clean and structured manner.
+
+Test exception scenarios: Include exception scenarios in your testing to ensure that the code behaves correctly in exceptional situations. Test cases should cover both expected and unexpected scenarios to validate the exception handling logic.
+
+Be cautious with bare except: Avoid using bare except statements, which catch all exceptions without specifying the type. This can hide errors and make it difficult to diagnose issues. Use specific exception types or catch only the exceptions that you expect.
+
+Document exception handling: Document the exceptions that can be raised by your code
+
+
+
+
+
+Regenerate response
