@@ -1,0 +1,106 @@
+Q1. MongoDB is a popular NoSQL (non-relational) database management system that stores data in a flexible, JSON-like format called BSON. It is designed to handle large-scale, unstructured data and is commonly used for applications that require high performance, scalability, and availability.
+
+Non-relational databases, also known as NoSQL databases, do not use the traditional relational table structure with fixed schemas like SQL databases. Instead, they use various data models such as key-value, document, column-family, or graph. This allows for more flexibility in handling data that does not fit neatly into a tabular structure, and can be beneficial for applications that need to store large amounts of rapidly changing, unstructured, or semi-structured data.
+
+Scenarios where MongoDB may be preferred over SQL databases include:
+
+Handling large-scale, unstructured data such as social media data, sensor data, or log files.
+Needing high performance for read-heavy or write-heavy workloads.
+Requiring flexibility in data modeling and schema changes without downtime.
+Scaling horizontally across multiple servers or clusters.
+Needing support for geospatial data and indexing.
+Q2. Features of MongoDB:
+
+Document-oriented: MongoDB stores data in a flexible, JSON-like format called BSON, which allows for complex data structures to be stored in a single document.
+Scalability: MongoDB can scale horizontally by adding more servers to a cluster, allowing for high availability and fault tolerance.
+Flexible Data Modeling: MongoDB does not enforce a fixed schema, allowing for changes in data structure without downtime.
+Indexing: MongoDB supports various types of indexes for efficient data retrieval and query performance.
+Replication: MongoDB can replicate data across multiple servers to provide redundancy and improve data availability.
+Aggregation: MongoDB supports powerful aggregation framework for advanced data processing and analytics.
+GridFS: MongoDB can store and retrieve large files using the GridFS specification.
+High Performance: MongoDB is designed for high performance, with features like in-memory storage and automatic caching.
+Q3. Code to connect MongoDB to Python, create a database, and a collection:
+
+python
+Copy code
+# Import the required libraries
+from pymongo import MongoClient
+
+# Connect to MongoDB
+client = MongoClient('mongodb://localhost:27017/')
+
+# Create a database
+db = client['mydb']
+
+# Create a collection
+collection = db['mycollection']
+Q4. Code to insert one record and insert many records into MongoDB, and use find() and find_one() methods to print the inserted record:
+
+python
+Copy code
+# Insert one record
+record1 = {'name': 'John', 'age': 30, 'city': 'New York'}
+collection.insert_one(record1)
+
+# Insert many records
+records = [{'name': 'Alice', 'age': 25, 'city': 'San Francisco'},
+           {'name': 'Bob', 'age': 35, 'city': 'Los Angeles'},
+           {'name': 'Charlie', 'age': 40, 'city': 'Chicago'}]
+collection.insert_many(records)
+
+# Print inserted record using find() method
+for record in collection.find():
+    print(record)
+
+# Print inserted record using find_one() method
+record2 = collection.find_one({'name': 'Alice'})
+print(record2)
+Q5. The find() method is used to query MongoDB and retrieve documents that match a specified query criteria. It returns a cursor that can be used to iterate over the documents. The query criteria can include conditions on field values, logical operators, and other query operators.
+
+Example code to use find() method in MongoDB with Python:
+
+python
+Copy code
+# Query documents with age greater than 30
+for record in collection.find({'age': {'$gt': 30}}):
+    print(record)
+Q6. The sort() method in MongoDB is used to sort the documents in a collection based on the values of one or more fields. It can be used in conjunction with the find() method to retrieve documents in a specific order. The sort() method takes a dictionary as an argument, where the keys represent the fields to be sorted and the values represent the sort order (1 for ascending, -1 for descending).
+
+Example code to demonstrate sorting in MongoDB with Python:
+
+python
+Copy code
+# Sort documents by age in ascending order
+asc_records = collection.find().sort('age', 1)
+for record in asc_records:
+    print(record)
+
+# Sort documents by age in descending order
+desc_records = collection.find().sort('age', -1)
+for record in desc_records:
+    print(record)
+Q7. In MongoDB, the delete_one(), delete_many(), and drop() methods are used for deleting documents or collections from a database.
+
+delete_one(): Deletes a single document that matches the specified query criteria. If multiple documents match the criteria, only the first one will be deleted.
+Example code to use delete_one() method in MongoDB with Python:
+
+python
+Copy code
+# Delete a single document with name 'Alice'
+result = collection.delete_one({'name': 'Alice'})
+print(f'Deleted count: {result.deleted_count}')
+delete_many(): Deletes all documents that match the specified query criteria.
+Example code to use delete_many() method in MongoDB with Python:
+
+python
+Copy code
+# Delete all documents with age greater than 30
+result = collection.delete_many({'age': {'$gt': 30}})
+print(f'Deleted count: {result.deleted_count}')
+drop(): Deletes an entire collection, including all its documents.
+Example code to use drop() method in MongoDB with Python:
+
+python
+Copy code
+# Drop the entire collection
+collection.drop()
