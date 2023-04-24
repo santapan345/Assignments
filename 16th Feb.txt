@@ -1,0 +1,45 @@
+Q1. A database is a structured collection of data that is stored and managed in a way that allows for efficient retrieval, updating, and deletion of data. It can be thought of as an organized collection of related information.
+
+SQL (Structured Query Language) and NoSQL (Not only SQL) are two types of databases that differ in their approach to organizing and storing data.
+
+SQL databases are relational databases that store data in tables with predefined schemas, where each row represents a single record and each column represents a field of data. SQL databases use SQL as their query language for defining and manipulating the data. Examples of SQL databases include MySQL, PostgreSQL, and Microsoft SQL Server.
+
+NoSQL databases, on the other hand, do not use tables with fixed schemas. Instead, they use various data models, such as key-value, document, column-family, or graph, to store and organize data. NoSQL databases are typically used for handling large amounts of unstructured or semi-structured data. Examples of NoSQL databases include MongoDB, Cassandra, and Redis.
+
+Q2. DDL stands for Data Definition Language, and it is a subset of SQL that is used to define and manage the structure of a database. The following are examples of DDL statements:
+
+CREATE: It is used to create database objects, such as tables, views, indexes, and schemas. For example:
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50),
+    age INT,
+    salary DECIMAL(10, 2)
+);
+DROP: It is used to delete database objects, such as tables or views. For example:
+DROP TABLE employees;
+ALTER: It is used to modify the structure of an existing database object, such as adding or deleting columns from a table. For example:
+ALTER TABLE employees
+ADD COLUMN gender CHAR(1);
+TRUNCATE: It is used to remove all data from a table, but retain the structure of the table. For example:
+TRUNCATE TABLE employees;
+Q3. DML stands for Data Manipulation Language, and it is used to manipulate the data stored in a database. The following are examples of DML statements:
+
+INSERT: It is used to add new data into a table. For example:
+INSERT INTO employees (id, name, age, salary)
+VALUES (1, 'John Doe', 30, 50000.00);
+UPDATE: It is used to modify existing data in a table. For example:
+UPDATE employees
+SET age = 31, salary = 55000.00
+WHERE id = 1;
+DELETE: It is used to remove data from a table. For example:
+DELETE FROM employees
+WHERE id = 1;
+Q4. DQL stands for Data Query Language, and it is used to retrieve data from a database. The most commonly used DQL statement is SELECT, which is used to query data from one or more tables. For example:
+SELECT id, name, age, salary
+FROM employees
+WHERE age > 30;
+This SELECT statement retrieves the values of the id, name, age, and salary columns from the employees table, but only for rows where the value of the age column is greater than 30.
+
+Q5. Primary Key and Foreign Key are two concepts used in relational databases to establish relationships between tables.
+
+Primary Key: It is a unique identifier for a row in a table. It ensures that each row in a table is uniquely identifiable and serves as a reference point for other tables that may have relationships with the table. For example, in the employees table mentioned earlier, the id column could be used as
