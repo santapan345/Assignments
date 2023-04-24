@@ -1,0 +1,44 @@
+Q1. What is an API? Give an example, where an API is used in real life.
+
+A1. API stands for Application Programming Interface. It is a set of rules and conventions that allow different software applications to communicate with each other and share data or functionality. APIs define how different software components should interact with each other and can be used to integrate different systems or enable third-party developers to build applications on top of existing platforms.
+
+An example of where an API is used in real life is in social media platforms such as Facebook, Twitter, or Instagram. These platforms provide APIs that allow developers to build applications that can interact with their services, such as posting tweets or retrieving user data. This enables third-party developers to create a wide variety of applications, such as social media management tools or analytics dashboards, that integrate with these platforms and provide additional functionalities.
+
+Q2. Give advantages and disadvantages of using API.
+
+A2. Advantages of using APIs:
+
+Integration: APIs enable different systems to communicate and share data, allowing for seamless integration between applications and services.
+
+Efficiency: APIs provide a standardized and efficient way to access data and functionality, reducing the need for duplicative development efforts.
+
+Innovation: APIs empower third-party developers to create new applications and services on top of existing platforms, fostering innovation and driving ecosystem growth.
+
+Scalability: APIs allow for modular development, enabling applications to be built in a scalable and extensible manner.
+
+Disadvantages of using APIs:
+
+Complexity: APIs can be complex and require technical expertise to implement and use effectively.
+
+Dependencies: APIs can create dependencies on third-party services, which may introduce risks such as changes in pricing, availability, or functionality.
+
+Security risks: APIs can be vulnerable to security risks, such as unauthorized access or data breaches, if not implemented and secured properly.
+
+Q3. What is a Web API? Differentiate between API and Web API.
+
+A3. A Web API is an API that is specifically designed to be used over the web, utilizing HTTP(S) protocols for communication. It is a set of rules and conventions that allow web-based applications to communicate with each other and share data or functionality. Web APIs are commonly used for building web applications, mobile applications, or other distributed systems.
+
+Difference between API and Web API:
+
+API:
+
+API stands for Application Programming Interface.
+It is a set of rules and conventions that allow different software applications to communicate with each other and share data or functionality.
+APIs can be used for different types of applications, including web applications, mobile applications, desktop applications, or other distributed systems.
+APIs can use various protocols for communication, such as HTTP, HTTPS, TCP/IP, or other custom protocols.
+Web API:
+
+Web API stands for Web Application Programming Interface.
+It is an API that is specifically designed to be used over the web, utilizing HTTP(S) protocols for communication.
+Web APIs are commonly used for building web applications, mobile applications, or other distributed systems that require communication over the web.
+Web APIs typically use HTTP(S) methods such as GET, POST, PUT, DELETE, etc., for operations on resources identified by URLs.
