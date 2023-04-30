@@ -1,0 +1,18 @@
+Q1. Explain GET and POST methods.
+Ans: Get method is mainly used at the client (Browser) side to send a request to a specified server to get certain data or resources. Using this method the server should only let us receive the data and not change its state. Hence it is only used to view something and not to change it. Get method is one of the most used HTTP method. The request parameter of the get method is appended to the URL. Get request is better for the data which does not need to be secure (It means the data which does not contain images or word documents).
+
+Post method is mainly used at the client (Browser) side to send data to a Specified server in order to create or rewrite a particular resource/data. This data sent to the server is stored in the request body of the HTTP request. Post method eventually leads to the creation of a new resource or updating an existing one. Due to this dynamic use, it is one of the most used HTTP methods. It is not one of the most secure methods because the data that is been sent is included in the body of the request and not in the URL. Post request is better for the data which needs to be secure (It means the data which contains images or word documents).
+
+Q2. Why is request used in Flask?
+Ans: The Flask Request Object is used to perform both sending and receiving operations from a user's browser to the server and process the request data from the server. It should be imported from the flask module.
+
+Q3. Why is redirect() used in Flask?
+Ans: Redirection in Flask can be done by returning a redirect response object, created by invoking the redirect() function. The same method is used for redirecting to other routes on the same application and external websites.
+
+Q4. What are templates in Flask? Why is the render_template() function used?
+Ans: Templates are files that contain static data as well as placeholders for dynamic data. A template is rendered with specific data to produce a final document. Flask uses the Jinja template library to render templates. In your application, you will use templates to render HTML which will display in the user's browser.
+
+render_template is used to generate output from a template file based on the Jinja2 engine that is found in the application's templates folder. Note that render_template is typically imported directly from the flask package instead of from flask.
+
+Q5. Create a simple API. Use Postman to test it. Attach the screenshot of the output in the Jupyter Notebook.
+Ans: https://green-librarian-ywapc.pwskills.app/lab/tree/work/json.jpg

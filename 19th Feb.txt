@@ -1,0 +1,38 @@
+Q1. What is Flask Framework? What are the advantages of Flask Framework?
+Ans:Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions.
+
+Flask is classified into a micro-framework that means it has little to no dependencies on external libraries. There are little dependencies to upgrade and to watch security bugs.
+
+Q2. Create a simple Flask application to display ‘Hello World!!’. Attach the screenshot of the output in
+Jupyter Notebook.
+Ans: https://green-librarian-ywapc.pwskills.app/lab/tree/work/19th%20feb1.jpg
+
+Q3. What is App routing in Flask? Why do we use app routes?
+App routing is the technique used to map the specific URL with the associated function intended to perform some task. 
+The Latest Web frameworks use the routing technique to help users remember application URLs. List the different methods to bind the URLs to their associated functions.
+
+Q4. Create a “/welcome” route to display the welcome message “Welcome to ABC Corporation” and a “/”
+route to show the following details:
+Company Name: ABC Corporation
+Location: India
+Contact Detail: 999-999-9999
+Ans: https://green-librarian-ywapc.pwskills.app/lab/tree/work/19th%20feb2.jpg
+https://green-librarian-ywapc.pwskills.app/lab/tree/work/19th%20feb3.jpg
+
+Q5. What function is used in Flask for URL Building? Write a Python code to demonstrate the working of the
+url_for() function.
+Ans: The url_for() function is used to build a URL to the specific function dynamically.
+
+from flask import Flask
+from flask import request
+
+app = Flask(__name__)
+
+@app.route("/req")
+def request1():
+    data = request.args.get('x')
+    return "<h1>You typed this {}</h1>".format(data)
+
+if __name__=="__main__":
+    app.run(host="0.0.0.0")
+
